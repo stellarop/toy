@@ -10,7 +10,7 @@
 	
 	<!-- SQL.XML 매퍼등록 -->
 	<mappers>
-		<mapper resource="mappers/user-Mapper.xml"/>
+		<mapper resource="mapper/user.xml"/>
 		
 	</mappers>
 </configuration>
