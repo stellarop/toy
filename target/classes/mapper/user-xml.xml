@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="UserDAO">
+<mapper namespace="userDAO">
 
 <!-- 로그인 
 <select id="login" resultType="user" parameterType="user">
@@ -15,4 +15,5 @@
  	 VALUES (#{id},#{password},#{username},#{email},#{sex},#{phonenumber},
  	 #{address},#{address2})
  </insert>
+ 
 </mapper>
