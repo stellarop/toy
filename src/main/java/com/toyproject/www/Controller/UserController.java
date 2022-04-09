@@ -20,6 +20,7 @@ public class UserController {
 	@RequestMapping("/login")
 	public String login() {
 		System.out.println("로그인 메서드 통과");
+		System.out.println("한글깨짐test");
 		return "login";
 	}
 }
