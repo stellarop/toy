@@ -18,4 +18,10 @@ public class UserServiceImpl implements UserService {
 		userDAO.SignUp(uservo);
 	}
 
+	@Override
+	public int idCheck(UserVO uservo) {
+		int idCheck = userDAO.idCheck(uservo);
+		return idCheck;
+	}
+
 }

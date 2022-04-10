@@ -25,6 +25,10 @@ public class UserController {
 		return "SignUp";
 	}
 	
+	@RequestMapping("/login.do")
+	public String login() {
+		return "login";
+	}
 	
 	@RequestMapping(value = "/SignUp.do", method = RequestMethod.POST)
 	@ResponseBody
@@ -34,8 +38,12 @@ public class UserController {
 		return SignUpMap;
 	}
 	
-	@RequestMapping("/login.do")
-	public String login() {
-		return "login";
+	@RequestMapping(value = "/idCheck.do")
+	@ResponseBody
+	public int idCheck(UserVO uservo) {
+		int idCheck = userservice.idCheck(uservo);
+		return idCheck;
 	}
+	
+	
 }

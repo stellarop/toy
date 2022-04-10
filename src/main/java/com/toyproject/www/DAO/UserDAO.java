@@ -15,4 +15,9 @@ public class UserDAO {
 	public void SignUp(UserVO uservo) {
 		mybatis.insert("userDAO.SignUp",uservo);
 	}
+	
+	public int idCheck(UserVO uservo) {
+		int idCheck = mybatis.selectOne("userDAO.idCheck",uservo);
+		return idCheck;
+	}
 }
