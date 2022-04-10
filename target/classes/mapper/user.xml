@@ -16,4 +16,21 @@
  	 #{address},#{address2})
  </insert>
  
+ <select id="idCheck" resultType="int">
+ 	SELECT COUNT(*) FROM USER WHERE ID =#{id}
+ </select>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 </mapper>
