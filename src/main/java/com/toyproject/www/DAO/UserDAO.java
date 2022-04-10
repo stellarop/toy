@@ -12,7 +12,7 @@ public class UserDAO {
 	@Autowired
 	SqlSessionTemplate mybatis;
 	
-	public void insertUser(UserVO uservo) {
-		mybatis.insert("userDAO.insertUser",uservo);
+	public void SignUp(UserVO uservo) {
+		mybatis.insert("userDAO.SignUp",uservo);
 	}
 }

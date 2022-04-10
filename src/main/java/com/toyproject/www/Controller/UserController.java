@@ -13,8 +13,8 @@ public class UserController {
 	@Autowired
 	UserService userservice;
 	
-	public void insertUser(UserVO uservo) {
-		userservice.insertUser(uservo);
+	public void SignUp(UserVO uservo) {
+		userservice.SignUp(uservo);
 	}
 	
 	@RequestMapping("/login")

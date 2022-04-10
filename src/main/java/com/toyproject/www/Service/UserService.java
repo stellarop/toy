@@ -6,5 +6,5 @@ import com.toyproject.www.VO.UserVO;
 
 @Service
 public interface UserService {
-	public void insertUser(UserVO uservo);
+	public void SignUp(UserVO uservo);
 }

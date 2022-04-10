@@ -14,8 +14,8 @@ public class UserServiceImpl implements UserService {
 	UserDAO userDAO;
 	
 	@Override
-	public void insertUser(UserVO uservo) {
-		userDAO.insertUser(uservo);
+	public void SignUp(UserVO uservo) {
+		userDAO.SignUp(uservo);
 	}
 
 }

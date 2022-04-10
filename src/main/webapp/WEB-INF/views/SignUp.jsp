@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>회원가입</title>
 </head>
 <body>
-	<h1>로그인 페이지</h1>
-	<a href="SignUp.jsp">회원가입 하기</a>
+<form action="">
+	 <h1>회원가입</h1>
+</form>
 </body>
 </html>

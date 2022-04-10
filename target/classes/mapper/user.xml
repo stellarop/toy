@@ -10,7 +10,7 @@
 </select>
  -->
  
- <insert id="insertUser" parameterType="user">
+ <insert id="SignUp" parameterType="user">
  	INSERT INTO USER(id,password,username,email,sex,phonenumber,address,address2)
  	 VALUES (#{id},#{password},#{username},#{email},#{sex},#{phonenumber},
  	 #{address},#{address2})
