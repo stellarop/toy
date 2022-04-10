@@ -18,8 +18,6 @@ public class UserController {
 	@Autowired
 	UserService userservice;
 	
-	
-	
 	@RequestMapping(value = "/SignUp.do", method = RequestMethod.GET)
 	public String SignUp() {
 		return "SignUp";
