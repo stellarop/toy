@@ -8,6 +8,27 @@
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
 <script src="jquery/jquery-3.6.0.min.js"></script>
+<script>
+$(function() {
+	
+})
+
+function idCheck() {
+	$.ajax({
+		url : 'idCheck.do',
+		type : 'post',
+		datatype : 'json',
+		data : {'id' : $('#id').val()},
+		success : function(data) {
+			if (data == 1) {
+				alert('중복된 아이디 입니다.');
+			}else {
+				alert('사용 가능한 아이디 입니다.')
+			}
+		}
+	})
+}
+</script>
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
@@ -20,6 +41,7 @@
 			<div class="mb-3">
 				<label>아이디</label> <input type="text" class="form-control" name="id"
 					id="id" placeholder="아이디를 입력해주세요." />
+					<button onclick="idCheck();">아이디 찾기</button>
 			</div>
 
 			<div class="mb-3">
