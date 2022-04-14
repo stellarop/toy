@@ -43,7 +43,6 @@ function idCheck() {
 					id="id" placeholder="아이디를 입력해주세요." />
 					<button onclick="idCheck();">아이디 찾기</button>
 			</div>
-
 			<div class="mb-3">
 				<label>패스워드</label> <input type="password" class="form-control"
 					name="password" id="password" placeholder="패스워드를 입력해주세요." />

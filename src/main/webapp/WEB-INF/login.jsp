@@ -17,6 +17,6 @@ $(function(){
 </head>
 <body>
 	<h1>로그인 페이지</h1>
-	<a href="SignUp.do">회원가입 하기</a>
+	<a href="SignUp.jsp">회원가입 하기</a>
 </body>
 </html>
