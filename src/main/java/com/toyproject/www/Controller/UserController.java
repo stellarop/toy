@@ -20,6 +20,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String login() {
+		System.out.println("로그인 들어옴");
 		return "login.jsp";
 	}
 	
