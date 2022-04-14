@@ -18,14 +18,9 @@ public class UserController {
 	@Autowired
 	UserService userservice;
 	
-	@RequestMapping(value = "/SignUp.do", method = RequestMethod.GET)
-	public String SignUp() {
-		return "SignUp";
-	}
-	
-	@RequestMapping("/login.do")
+	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String login() {
-		return "login";
+		return "login.jsp";
 	}
 	
 	@RequestMapping(value = "/SignUp.do", method = RequestMethod.POST)
