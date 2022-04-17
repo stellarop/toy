@@ -180,8 +180,8 @@ function idCheck() {
 				<label>성별</label>
 					<select name="sex" id="sex" class="form-control">
     					<option value="">성별 선택</option>
-    					<option value="학생">남자</option>
-    					<option value="회사원">여자</option>
+    					<option value="남자">남자</option>
+    					<option value="여자">여자</option>
 					</select>
 			</div>
 			<div class="mb-3">
