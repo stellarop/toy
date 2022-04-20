@@ -6,10 +6,9 @@ public class UserVO {
 	private String username;
 	private String email;
 	private String sex;
-	private int phonenumber;
+	private String phonenumber;
 	private String address;
 	private String address2;
-	
 	public String getId() {
 		return id;
 	}
@@ -40,10 +39,10 @@ public class UserVO {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public int getPhonenumber() {
+	public String getPhonenumber() {
 		return phonenumber;
 	}
-	public void setPhonenumber(int phonenumber) {
+	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 	public String getAddress() {
@@ -58,4 +57,6 @@ public class UserVO {
 	public void setAddress2(String address2) {
 		this.address2 = address2;
 	}
+	
+	
 }
