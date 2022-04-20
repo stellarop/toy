@@ -109,9 +109,40 @@ $(function() {
 			 return false;
 		}
 		
-	})
+		
+		$.ajax({
+			url : 'SignUp.do',
+			type : 'post',
+			datatype : 'json',
+			data : $('#SignUp').serializeArray(),
+			success : function(data){
+				if(data == true){
+					alert('등록됨');
+					$('#SignUp').submit();
+				}else if(data == false){
+					alert('등록안됨');
+				}
+			}
+		})
+		
+		
+		
 })
-
+	
+	
+	
+	$('#address').click(function() {
+		new daum.Postcode({
+	        oncomplete: function(data) {
+	        	console.log(data);
+	        	$('#address').val(data.address);
+				$('#address2').focus();
+	        }
+	    }).open();
+	})
+	
+	
+})	
 function idCheck() {
 	
 	if($('#id').val()=='' || $('#id') == null || $('#id') == undefined){
@@ -151,7 +182,7 @@ function idCheck() {
 </head>
 <body>
 	<div class="container" role="main">
-		<form action="SignUp.do" id="#" method="post">
+		<form action="SignUp.do" id="SignUp" method="post">
 			<h1>회원가입</h1>
 			<h3>회원가입을 하기 위해서 정보를 입력해주세요.</h3>		
 			
