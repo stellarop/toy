@@ -116,19 +116,45 @@ $(function() {
 			datatype : 'json',
 			data : $('#SignUp').serializeArray(),
 			success : function(data){
-				if(data == true){
-					alert('등록됨');
-					$('#SignUp').submit();
-				}else if(data == false){
-					alert('등록안됨');
-				}
+				Swal.fire({
+		            title: '회원가입 하시겠습니까?',
+		            icon: 'warning',
+		            showCancelButton: true,
+		            confirmButtonColor: '#3085d6',
+		            cancelButtonColor: '#d33',
+		            confirmButtonText: '가입',
+		            cancelButtonText: '취소'
+		        }).then((result) => {
+		            if (result.isConfirmed) {
+		            	if(data == true){
+							/*
+							가입 버튼 클릭 시 success 창이 뜨지 않고 바로 login.jsp로 이동하는 현상(주석 처리 하였으나 추후 고쳐야함.)
+		                	Swal.fire(
+		                    	'회원가입이 완료되었습니다.',
+		                    	'로그인 해주세요.',
+		                    	'success'
+		                	)
+		                	*/
+		                	$('#SignUp').submit();
+		                	window.location.href = "login.jsp";
+		            	}else if(data == false){
+		            		Swal.fire(
+			                    '아이디가 중복 되었습니다.',
+			                    '아이디를 다시 입력해주세요.',
+			                    'error'
+			                )
+		            	}
+		            }
+		        })
 			}
 		})
 		
 		
 		
+		
+		
+		
 })
-	
 	
 	
 	$('#address').click(function() {
