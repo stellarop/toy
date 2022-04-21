@@ -1,5 +1,7 @@
 package com.toyproject.www.VO;
 
+import java.sql.Date;
+
 public class UserVO {
 	private String id;
 	private String password;
@@ -9,6 +11,7 @@ public class UserVO {
 	private String phonenumber;
 	private String address;
 	private String address2;
+	private Date regData;
 	public String getId() {
 		return id;
 	}
@@ -57,6 +60,13 @@ public class UserVO {
 	public void setAddress2(String address2) {
 		this.address2 = address2;
 	}
+	public Date getRegData() {
+		return regData;
+	}
+	public void setRegData(Date regData) {
+		this.regData = regData;
+	}
+	
 	
 	
 }
