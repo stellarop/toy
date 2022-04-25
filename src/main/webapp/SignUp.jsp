@@ -136,7 +136,7 @@ $(function() {
 		                	)
 		                	*/
 		                	$('#SignUp').submit();
-		                	window.location.href = "main.jsp";
+		                	window.location.href = "login.jsp";
 		            	}else if(data == false){
 		            		Swal.fire(
 			                    '아이디가 중복 되었습니다.',
