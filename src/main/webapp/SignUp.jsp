@@ -14,7 +14,8 @@
 <!-- jquery -->
 <script src="jquery/jquery-3.6.0.min.js"></script>
 <!-- 카카오 주소 api -->
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 $(function() {
 	$('#SingUpBtn').click(function() {
@@ -217,71 +218,80 @@ function idCheck() {
 <title>회원가입</title>
 </head>
 <body>
-<div class="container" role="main">
-<form action="SignUp.do" id="SignUp">
-<h1>회원가입</h1>
-<br /><br />
+	<div class="container" role="main">
+		<form action="SignUp.do" id="SignUp">
+			<h1>회원가입</h1>
+			<br />
+			<br />
 
-<div class="form-row">
-    <div class="form-group col-md-3">
-      <label for="id">아이디</label>
-      <input type="text" class="form-control" id="id" name="id" placeholder="아이디를 입력해주세요.">
-    </div>
-    <div class="form-group col-md-3">
-    	<br />
-     <button type="button" class="btn btn-primary" onclick="idCheck();">아이디 확인</button>
-     </div>
-    <div class="form-group col-md-3">
-      <label for="email">이메일</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요.">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="inputState"> ＊ </label>
-      <select name="email" id="email2" class="form-control">
-        <option selected>email</option>
-        <option>@naver.com</option>
-        <option>@gmail.com</option>
-      </select>
-    </div>
-</div>
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="password">패스워드</label>
-      <input type="password" class="form-control" id="password" name="password" placeholder="패스워드를 입력해주세요">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="password2">패스워드 확인</label>
-      <input type="password" class="form-control" id="password2" placeholder="패스워드 재확인을 입력해주세요.">
-    </div>
-</div>
-<div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="phonenumber">번호</label>
-    <input type="text" class="form-control" id="phonenumber" name="phonenumber" placeholder="번호를 입력해주세요.">
-  </div>
-   <div class="form-group col-md-4">
-      <label for="name">성함</label>
-      <input type="text" class="form-control" id="username" name="username" placeholder="성함을 입력해주세요.">
-    </div>
-    <div class="form-group col-md-2">
-      <label for="sex">성별</label>
-      <select name="sex" id="sex" class="form-control">
-        <option selected>성별</option>
-        <option>남자</option>
-        <option>여자</option>
-      </select>
-    </div>
-</div>
-  <div class="form-group">
-    <label for="address">주소</label>
-    <input type="text" class="form-control" id="address" name="address" placeholder="주소를 입력해주세요.">
-  </div>
-  <div class="form-group">
-    <label for="address2">상세주소</label>
-    <input type="text" class="form-control" id="address2" name="address2" placeholder="상세 주소를 입력해주세요.">
-  </div>
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="id">아이디</label> <input type="text" class="form-control"
+						id="id" name="id" placeholder="아이디를 입력해주세요.">
+				</div>
+				<div class="form-group col-md-3">
+					<br />
+					<button type="button" class="btn btn-primary" onclick="idCheck();">아이디
+						확인</button>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="email">이메일</label> <input type="email"
+						class="form-control" id="email" name="email"
+						placeholder="이메일을 입력해주세요.">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="inputState"> ＊ </label> <select name="email"
+						id="email2" class="form-control">
+						<option selected>email</option>
+						<option>@naver.com</option>
+						<option>@gmail.com</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="password">패스워드</label> <input type="password"
+						class="form-control" id="password" name="password"
+						placeholder="패스워드를 입력해주세요">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="password2">패스워드 확인</label> <input type="password"
+						class="form-control" id="password2"
+						placeholder="패스워드 재확인을 입력해주세요.">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="phonenumber">번호</label> <input type="text"
+						class="form-control" id="phonenumber" name="phonenumber"
+						placeholder="번호를 입력해주세요.">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="name">성함</label> <input type="text"
+						class="form-control" id="username" name="username"
+						placeholder="성함을 입력해주세요.">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="sex">성별</label> <select name="sex" id="sex"
+						class="form-control">
+						<option selected>성별</option>
+						<option>남자</option>
+						<option>여자</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="address">주소</label> <input type="text"
+					class="form-control" id="address" name="address"
+					placeholder="주소를 입력해주세요.">
+			</div>
+			<div class="form-group">
+				<label for="address2">상세주소</label> <input type="text"
+					class="form-control" id="address2" name="address2"
+					placeholder="상세 주소를 입력해주세요.">
+			</div>
 
-</form>
-<button type="button" id="SingUpBtn" class="btn btn-primary">회원가입</button>	
+		</form>
+		<button type="button" id="SingUpBtn" class="btn btn-primary">회원가입</button>
 </body>
 </html>
