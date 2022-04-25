@@ -1,8 +1,8 @@
 package com.toyproject.www.Controller;
 
-import java.util.HashMap;
-import java.util.Map;
 
+
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,17 +20,24 @@ public class UserController {
 	
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String login() {
-		System.out.println("로그인 들어옴");
 		return "login.jsp";
 	}
 	
+	
 	@RequestMapping(value = "/SignUp.do", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String, Object> SignUp(UserVO uservo) {
-		HashMap<String, Object> SignUpMap = new HashMap<String, Object>();
-		//SignUpMap.put("SignUp", userservice.SignUp(uservo));
-		return SignUpMap;
+	public boolean SignUp(UserVO uservo) {
+		
+		int idCheck = userservice.idCheck(uservo);
+		
+		if(idCheck == 1) {
+			return false;
+		}else {
+			userservice.SignUp(uservo);
+		}
+		return true;
 	}
+	
 	
 	@RequestMapping(value = "/idCheck.do")
 	@ResponseBody
