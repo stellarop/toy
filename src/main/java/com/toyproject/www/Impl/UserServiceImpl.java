@@ -24,4 +24,10 @@ public class UserServiceImpl implements UserService {
 		return idCheck;
 	}
 
+	@Override
+	public UserVO selectUser(UserVO uservo) {
+		return userDAO.selectUser(uservo);
+		
+	}
+
 }

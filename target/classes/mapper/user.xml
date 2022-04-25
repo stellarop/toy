@@ -4,21 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userDAO">
 
-<!-- 로그인 
-<select id="login" resultType="user" parameterType="user">
+
+<select id="selectUser" resultType="user" parameterType="user">
 	SELECT * FROM USERS WHERE ID =#{id} AND PASSWORD=#{password}
 </select>
- -->
- 
- <insert id="SignUp" parameterType="user">
+
+<insert id="SignUp" parameterType="user">
  	INSERT INTO USER(id,password,username,email,sex,phonenumber,address,address2)
  	 VALUES (#{id},#{password},#{username},#{email},#{sex},#{phonenumber},
  	 #{address},#{address2})
- </insert>
+</insert>
  
- <select id="idCheck" resultType="int">
+<select id="idCheck" resultType="int">
  	SELECT COUNT(*) FROM USER WHERE ID =#{id}
- </select>
+</select>
  
  
  

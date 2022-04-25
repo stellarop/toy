@@ -8,4 +8,5 @@ import com.toyproject.www.VO.UserVO;
 public interface UserService {
 	public void SignUp(UserVO uservo);
 	public int idCheck(UserVO uservo);
+	public UserVO selectUser(UserVO uservo);
 }

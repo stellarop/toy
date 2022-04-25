@@ -10,14 +10,18 @@ import com.toyproject.www.VO.UserVO;
 public class UserDAO {
 
 	@Autowired
-	SqlSessionTemplate mybatis;
+	SqlSessionTemplate sqlsessiontemplate;
 	
 	public void SignUp(UserVO uservo) {
-		mybatis.insert("userDAO.SignUp",uservo);
+		sqlsessiontemplate.insert("userDAO.SignUp",uservo);
+	}
+	
+	public UserVO selectUser(UserVO uservo) {
+		return sqlsessiontemplate.selectOne("userDAO.selectUser", uservo);
 	}
 	
 	public int idCheck(UserVO uservo) {
-		int idCheck = mybatis.selectOne("userDAO.idCheck",uservo);
+		int idCheck = sqlsessiontemplate.selectOne("userDAO.idCheck",uservo);
 		return idCheck;
 	}
 }
