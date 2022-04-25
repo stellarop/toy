@@ -1,17 +1,17 @@
 package com.toyproject.www.VO;
 
 public class SimpleBoardVO {
-	private int board_idx;
+	private int board_seq;
 	private String type;
 	private String title;
 	private String writer;
 	private String content;
 	
 	public int getBoard_idx() {
-		return board_idx;
+		return board_seq;
 	}
 	public void setBoard_idx(int board_idx) {
-		this.board_idx = board_idx;
+		this.board_seq = board_idx;
 	}
 	public String getType() {
 		return type;
