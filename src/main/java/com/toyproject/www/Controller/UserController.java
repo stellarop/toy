@@ -1,5 +1,7 @@
 package com.toyproject.www.Controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import com.toyproject.www.Service.UserService;
 import com.toyproject.www.VO.UserVO;
@@ -26,12 +29,13 @@ public class UserController {
 	@SuppressWarnings("null")
 	@ResponseBody
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
-	public ResponseEntity<Integer> selectUser(UserVO uservo) {
+	public ResponseEntity<Integer> selectUser(UserVO uservo, HttpSession session) {
 
 		try {
 			UserVO user = userservice.selectUser(uservo);
 
 			if (user != null || StringUtils.isEmpty(user.getId())) {
+				session.setAttribute("userName", user.getUsername());
 				return new ResponseEntity<Integer>(1, HttpStatus.OK);
 			}
 
