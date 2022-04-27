@@ -23,6 +23,7 @@ public class UserController {
 		return "login.jsp";
 	}
 
+	@SuppressWarnings("null")
 	@ResponseBody
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public ResponseEntity<Integer> selectUser(UserVO uservo) {
