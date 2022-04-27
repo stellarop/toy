@@ -6,7 +6,7 @@
 
 
 <select id="selectUser" resultType="user" parameterType="user">
-	SELECT * FROM USERS WHERE ID =#{id} AND PASSWORD=#{password}
+	SELECT * FROM USER WHERE ID =#{id} AND PASSWORD=#{password}
 </select>
 
 <insert id="SignUp" parameterType="user">
