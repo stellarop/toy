@@ -16,6 +16,11 @@ $(function() {
     if(kakaoInfo != null){
         var data = JSON.parse(kakaoInfo);
 		console.log(data);
+		
+		if(data['accessToken'] == '' || data['accessToken'] == null || data['accessToken'] == undefined){
+			alert('카카오 로그인은 정상적으로 되었으나\n유저 정보가 조회되지 않습니다.');
+			location.href = "login.jsp";
+		}
         alert("카카오 로그인 성공 \n accessToken : " + data['accessToken']);
         alert(
         "user : \n" + "email : "
