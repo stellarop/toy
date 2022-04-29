@@ -73,7 +73,7 @@ $(function() {
 		if($('#phonenumber').val()=='' || $('#phonenumber') == null || $('#phonenumber') == undefined){
 			 $('#phonenumber').focus();
 			 
-			 Swal.fire({
+		   Swal.fire({
            	icon: 'warning',
            	title: '휴대폰번호를 입력해주세요.',
        	 });
@@ -127,36 +127,15 @@ $(function() {
 			datatype : 'json',
 			data : $('#SignUp').serializeArray(),
 			success : function(data){
-				Swal.fire({
-		            title: '회원가입 하시겠습니까?',
-		            icon: 'warning',
-		            showCancelButton: true,
-		            confirmButtonColor: '#3085d6',
-		            cancelButtonColor: '#d33',
-		            confirmButtonText: '가입',
-		            cancelButtonText: '취소'
-		        }).then((result) => {
-		            if (result.isConfirmed) {
-		            	if(data == true){
-							/*
-							가입 버튼 클릭 시 success 창이 뜨지 않고 바로 login.jsp로 이동하는 현상(주석 처리 하였으나 추후 고쳐야함.)
-		                	Swal.fire(
-		                    	'회원가입이 완료되었습니다.',
-		                    	'로그인 해주세요.',
-		                    	'success'
-		                	)
-		                	*/
-		                	$('#SignUp').submit();
-		                	window.location.href = "login.jsp";
-		            	}else if(data == false){
-		            		Swal.fire(
-			                    '아이디가 중복 되었습니다.',
-			                    '아이디를 다시 입력해주세요.',
-			                    'error'
-			                )
-		            	}
-		            }
-		        })
+				if(confirm('회원가입 하시겠습니까?')) {
+					if(data == true){
+						alert('회원가입이 완료되었습니다.');
+						$('#SignUp').submit();
+						location.href = "main.jsp";
+					}else if(data == false){
+						alert('중복된 아이디 입니다.\n아이디를 다시 입력해주세요.');
+					}
+				}
 			}
 		})
 		
