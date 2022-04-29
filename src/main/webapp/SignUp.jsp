@@ -120,25 +120,23 @@ $(function() {
 			 return false;
 		}
 		
-		
+	if(confirm('회원가입 하시겠습니까?')) {
 		$.ajax({
 			url : 'SignUp.do',
 			type : 'post',
 			datatype : 'json',
 			data : $('#SignUp').serializeArray(),
 			success : function(data){
-				if(confirm('회원가입 하시겠습니까?')) {
 					if(data == true){
 						alert('회원가입이 완료되었습니다.');
 						$('#SignUp').submit();
-						location.href = "main.jsp";
+						location.href = "login.jsp";
 					}else if(data == false){
 						alert('중복된 아이디 입니다.\n아이디를 다시 입력해주세요.');
 					}
-				}
-			}
-		})
-		
+				}	
+			})
+		}
 		
 		
 		
