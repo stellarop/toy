@@ -54,13 +54,30 @@ $(function(){
 				// 로그인 실패시 에러 메시지 출력 해야 해야함(추후 반영 예정)
 				location.href = "login.jsp";
 				
-			}
+			} 
 		})
 	})
+
 	
 	
-	
+    
+    
 });
+
+
+
+function kakaologin() {
+	$.ajax({
+		url : 'getKakaoLoginUrl.do',
+		type : 'get',
+		async : false,
+		dataType : 'text',
+		success : function(data) {
+			console.log(data);
+			location.href = data;
+		}
+	})
+}
 
 </script>
 <style>
@@ -92,7 +109,9 @@ $(function(){
 <div class="container" role="main">
 <form action="login.do" method="post">
 <center>
+
 <div class="simple-login-container">
+
 <h1>로그인</h1>
     <div class="row">
         <div class="col-md-12 form-group">
@@ -110,8 +129,9 @@ $(function(){
         </div>
     </div>
     
-  
+   <button type="button" id="kakaoLogin" class="btn btn-block btn-login" onclick="kakaologin();">카카오 로그인</button>
 	
+	<br />
     <div class="row">
         <div class="col-md-12">
            	<a href="SignUp.jsp">회원가입하기 </a>
