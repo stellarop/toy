@@ -218,7 +218,7 @@ private static final Logger logger = Logger.getLogger(UserController.class);
 		if (idCheck == 1) {
 			return false;
 		} else {
-			userservice.SignUp(uservo);
+			userservice.signUp(uservo);
 		}
 		return true;
 	}

@@ -12,7 +12,7 @@ public class UserDAO {
 	@Autowired
 	SqlSessionTemplate sqlsessiontemplate;
 	
-	public void SignUp(UserVO uservo) {
+	public void signUp(UserVO uservo) {
 		sqlsessiontemplate.insert("userDAO.SignUp",uservo);
 	}
 	
