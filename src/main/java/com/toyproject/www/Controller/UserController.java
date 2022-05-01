@@ -176,7 +176,7 @@ private static final Logger logger = Logger.getLogger(UserController.class);
             
             String nickname = properties.getAsJsonObject().get("nickname").getAsString();
             String email = kakao_account.getAsJsonObject().get("email").getAsString();
-            
+           
             userInfo.put("accessToken", access_Token);
             userInfo.put("nickname", nickname);
             userInfo.put("email", email);
