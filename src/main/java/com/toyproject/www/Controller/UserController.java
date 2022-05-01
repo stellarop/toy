@@ -77,6 +77,7 @@ private static final Logger logger = Logger.getLogger(UserController.class);
 		HashMap<String, Object> userInfo = getUserInfo(access_Token);
 		
 		logger.info("access_Token : " + access_Token);
+		logger.info("userInfo : " + userInfo);
 		logger.info("email : " + userInfo.get("email"));
 		logger.info("nickname : " + userInfo.get("nickname"));
 		
