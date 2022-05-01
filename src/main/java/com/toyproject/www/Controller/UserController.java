@@ -145,9 +145,9 @@ private static final Logger logger = Logger.getLogger(UserController.class);
 	// 유저 정보 조회
 	public HashMap<String, Object> getUserInfo(String access_Token){
 		HashMap<String, Object> userInfo = new HashMap<String, Object>();
-		String KakaoLoginUrl = "https://kapi.kakao.com/v2/user/me";
+		String userInfoUrl = "https://kapi.kakao.com/v2/user/me";
 		try {
-			URL url = new URL(KakaoLoginUrl);
+			URL url = new URL(userInfoUrl);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             
 			conn.setRequestMethod("GET");
