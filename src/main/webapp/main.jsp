@@ -11,7 +11,7 @@
 <script src="jquery/jquery-3.6.0.min.js"></script>
 <script>
 $(function() {
-	var kakaoInfo = "${kakaoInfo}";
+	var kakaoInfo = '${kakaoInfo}';
 
     if(kakaoInfo != null){
         var data = JSON.parse(kakaoInfo);
@@ -22,11 +22,7 @@ $(function() {
 			location.href = "login.jsp";
 		}
         alert("카카오 로그인 성공 \n accessToken : " + data['accessToken']);
-        alert(
-        "user : \n" + "email : "
-        + data['email']  
-        + "\n nickname : " 
-        + data['nickname']);
+        alert("email : " + data['email'] + "\n nickname : " + data['nickname']);
     }else{
     	alert('카카오 로그인 실패');
     	location.href = "login.jsp";
