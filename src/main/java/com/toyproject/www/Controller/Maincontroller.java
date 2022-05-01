@@ -24,7 +24,7 @@ public class Maincontroller {
 	public String main(UserVO uservo, Model model) {
 		UserVO user = userservice.selectUser(uservo);
 		if (user == null || StringUtils.isEmpty(user.getId())) {
-			logger.info("비정상적인 접근");
+			logger.info("[비정상적인 접근] : 로그인 후 이용 바랍니다.");
 			return "redirect:login.jsp";
 		}
 		return "main.jsp";
