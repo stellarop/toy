@@ -197,6 +197,7 @@ private static final Logger logger = Logger.getLogger(UserController.class);
 
 			if (user != null || StringUtils.isEmpty(user.getId())) {
 				session.setAttribute("userName", user.getUsername());
+				session.setAttribute("userId", user.getId());
 				return new ResponseEntity<Integer>(1, HttpStatus.OK);
 			}
 
