@@ -77,7 +77,7 @@ private static final Logger logger = Logger.getLogger(UserController.class);
 		HashMap<String, Object> userInfo = getUserInfo(access_Token);
 		
 		logger.info("access_Token : " + access_Token);
-		logger.info("userInfo : " + userInfo.get("email"));
+		logger.info("email : " + userInfo.get("email"));
 		logger.info("nickname : " + userInfo.get("nickname"));
 		
 		// 유저 정보 json으로 변경
@@ -169,10 +169,10 @@ private static final Logger logger = Logger.getLogger(UserController.class);
          
             JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(result);
-
+            logger.info("element : " + element);
             JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
             JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
-
+            
             String nickname = properties.getAsJsonObject().get("nickname").getAsString();
             String email = kakao_account.getAsJsonObject().get("email").getAsString();
             
@@ -200,10 +200,8 @@ private static final Logger logger = Logger.getLogger(UserController.class);
 			}
 
 		} catch (Exception e) {
-			String error = e.getMessage();
-			int errorMessage = Integer.parseInt(error);
-			
-			return new ResponseEntity<Integer>(errorMessage, HttpStatus.BAD_REQUEST);
+			logger.info("login 실패 errorMessage : " + e.getMessage());
+			return new ResponseEntity<Integer>(2, HttpStatus.BAD_REQUEST);
 		}
 		return null;
 
