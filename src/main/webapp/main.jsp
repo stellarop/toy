@@ -22,7 +22,7 @@ $(function() {
 			location.href = "login.jsp";
 		}
         alert("카카오 로그인 성공 \n accessToken : " + data['accessToken']);
-        alert("email : " + data['email'] + "\n nickname : " + data['nickname']);
+        alert("email : " + data['email'] + "\nnickname : " + data['nickname']);
     }else{
     	alert('카카오 로그인 실패');
     	location.href = "login.jsp";
@@ -34,5 +34,19 @@ $(function() {
 </head>
 <body>
 	<h1>메인 페이지</h1>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">상담 게시판</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">판매처 등록</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">상품 등록</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#"></a>
+  </li>
+</ul>
 </body>
 </html>
