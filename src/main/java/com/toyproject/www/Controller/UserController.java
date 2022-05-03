@@ -202,7 +202,7 @@ private static final Logger logger = Logger.getLogger(UserController.class);
 			}
 
 		} catch (Exception e) {
-			logger.error("login ½ÇÆÐ errorMessage : " + e.getMessage());
+			logger.error("login errorMessage : " + e.getMessage());
 			return new ResponseEntity<Integer>(2, HttpStatus.BAD_REQUEST);
 		}
 		return null;
