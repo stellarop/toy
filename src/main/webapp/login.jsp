@@ -45,7 +45,7 @@ $(function(){
 			success : function(data){	
 				if(data == 1){
 					alert('로그인 성공');
-	                location.href = "main.jsp";
+	                location.href = "main.do";
 				}else if(data == null){
 					alert('알 수 없는 경로 입니다.');
 				}	
@@ -139,6 +139,7 @@ function kakaologin() {
     </div>
 </div>
 </center>
+<!-- <p><img src="/resources/image/kakaoButton/kakao_login_large_narrow.png"/></p> -->
 </form>
 </div>
 
