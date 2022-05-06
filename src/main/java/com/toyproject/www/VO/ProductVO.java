@@ -1,7 +1,10 @@
 package com.toyproject.www.VO;
 
+import java.sql.Date;
+
 public class ProductVO {
 	private int product_seq;
+	private String vendor_code;
 	private String product_code;
 	private String vendor_name;
 	private String product_type;
@@ -9,13 +12,18 @@ public class ProductVO {
 	private int product_weight;
 	private String product_process;
 	private int product_quantity;
-	private String id;
-	
+	private Date regData;
 	public int getProduct_seq() {
 		return product_seq;
 	}
 	public void setProduct_seq(int product_seq) {
 		this.product_seq = product_seq;
+	}
+	public String getVendor_code() {
+		return vendor_code;
+	}
+	public void setVendor_code(String vendor_code) {
+		this.vendor_code = vendor_code;
 	}
 	public String getProduct_code() {
 		return product_code;
@@ -59,12 +67,15 @@ public class ProductVO {
 	public void setProduct_quantity(int product_quantity) {
 		this.product_quantity = product_quantity;
 	}
-	public String getId() {
-		return id;
+	public Date getRegData() {
+		return regData;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setRegData(Date regData) {
+		this.regData = regData;
 	}
+	
+	
+	
 	
 	
 }
