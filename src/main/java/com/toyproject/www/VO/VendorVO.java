@@ -1,17 +1,13 @@
 package com.toyproject.www.VO;
 
+import java.sql.Date;
+
 public class VendorVO {
-	private int vendor_seq;
 	private String vendor_code;
 	private String vendor_name;
-	private String id;
-	
-	public int getVendor_seq() {
-		return vendor_seq;
-	}
-	public void setVendor_seq(int vendor_seq) {
-		this.vendor_seq = vendor_seq;
-	}
+	private String vendor_number;
+	private String vendor_type;
+	private Date regData;
 	public String getVendor_code() {
 		return vendor_code;
 	}
@@ -24,12 +20,26 @@ public class VendorVO {
 	public void setVendor_name(String vendor_name) {
 		this.vendor_name = vendor_name;
 	}
-	public String getId() {
-		return id;
+	public String getVendor_number() {
+		return vendor_number;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setVendor_number(String vendor_number) {
+		this.vendor_number = vendor_number;
 	}
+	public String getVendor_type() {
+		return vendor_type;
+	}
+	public void setVendor_type(String vendor_type) {
+		this.vendor_type = vendor_type;
+	}
+	public Date getRegData() {
+		return regData;
+	}
+	public void setRegData(Date regData) {
+		this.regData = regData;
+	}
+	
+	
 	
 	
 }
