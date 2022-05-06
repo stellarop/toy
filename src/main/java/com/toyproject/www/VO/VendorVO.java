@@ -8,6 +8,7 @@ public class VendorVO {
 	private String vendor_number;
 	private String vendor_type;
 	private Date regData;
+	
 	public String getVendor_code() {
 		return vendor_code;
 	}
@@ -22,7 +23,7 @@ public class VendorVO {
 	}
 	public String getVendor_number() {
 		return vendor_number;
-	}
+	} 
 	public void setVendor_number(String vendor_number) {
 		this.vendor_number = vendor_number;
 	}
@@ -38,7 +39,6 @@ public class VendorVO {
 	public void setRegData(Date regData) {
 		this.regData = regData;
 	}
-	
 	
 	
 	
