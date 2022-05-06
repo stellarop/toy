@@ -9,8 +9,5 @@ public class VendorVO {
 	private String vendor_type;
 	private Date regData;
 	
-	
-	
-	
-	
+
 }
