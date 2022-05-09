@@ -46,6 +46,16 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>src/test/resources/json-simple-1.1.1.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Users/leeyeonjae/Desktop/json-simple-1.1.1.jar</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/WEB-INF/common-lang3.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Users/leeyeonjae/Desktop/common-lang3.jar</locationURI>
+		</link>
+		<link>
 			<name>src/main/webapp/jquery/jquery-3.6.0.min.js</name>
 			<type>1</type>
 			<locationURI>PARENT-4-PROJECT_LOC/Users/leeyeonjae/Desktop/jquery-3.6.0.min.js</locationURI>
