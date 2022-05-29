@@ -2,22 +2,21 @@ package com.toyproject.www.VO;
 
 public class SimpleBoardVO {
 	private int board_seq;
-	private String type;
+	private String board_type;
 	private String title;
 	private String writer;
 	private String content;
-	
-	public int getBoard_idx() {
+	public int getBoard_seq() {
 		return board_seq;
 	}
-	public void setBoard_idx(int board_idx) {
-		this.board_seq = board_idx;
+	public void setBoard_seq(int board_seq) {
+		this.board_seq = board_seq;
 	}
-	public String getType() {
-		return type;
+	public String getBoardtype() {
+		return board_type;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setBoardtype(String boardtype) {
+		this.board_type = boardtype;
 	}
 	public String getTitle() {
 		return title;
@@ -37,4 +36,10 @@ public class SimpleBoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
+
+	
+	
+	
+	
 }
+

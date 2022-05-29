@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardDAO">
+
+ <resultMap id="boardResult" type="board">  
+  	<id property="board_seq" column="BOARD_SEQ"/>
+  	<result property="board_type" column="BOARD_TYPE"/>
+  	<result property="title" column="TITLE"/>
+  	<result property="writer" column="WRITER"/>
+  	<result property="content" column="CONTENT"/>
+  </resultMap>
+
+<select id="boardList" resultMap="boardResult">
+	SELECT * FROM SIMPLEBOARD ORDER BY BOARD_SEQ DESC;
+</select>
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</mapper>

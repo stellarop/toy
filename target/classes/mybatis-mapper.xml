@@ -5,12 +5,12 @@
 <configuration>
   <typeAliases>
 		<typeAlias alias="user" type="com.toyproject.www.VO.UserVO"/>
-		
+		<typeAlias alias="board" type="com.toyproject.www.VO.SimpleBoardVO"/>
 	</typeAliases>
 	
 	<!-- SQL.XML 매퍼등록 -->
 	<mappers>
 		<mapper resource="mapper/user.xml"/>
-		
+		<mapper resource="mapper/board.xml"/>
 	</mappers>
 </configuration>
