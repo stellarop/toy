@@ -24,7 +24,10 @@ var start = {
 			},
 			columns: [
 	              { title: "번호" , data: "board_seq",  width:"20%"},
-	              { title: "제목" , data: "title", width:"20%"},
+	              { title: "제목" , data: "title",
+	            	  render : function(data, type, row) {
+							return '<a href="getBoard.do?board_seq=' + row.board_seq +'">' + data + '</a>';
+							width:"20%"}},
 	              { title: "작성자" , data: "writer", width:"20%"},
 	              // 칼럼명이 board_type인데 _ 쓰니 에러 발생 왜 에러가 나는지 추후 알아낼 예정
 	              { title: "분류" , data: "boardtype", width:"20%"},
