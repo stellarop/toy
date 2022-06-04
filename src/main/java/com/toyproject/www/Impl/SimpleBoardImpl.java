@@ -20,4 +20,9 @@ public class SimpleBoardImpl implements SimpleBoardService{
 		return simpleBoardDAO.boardList(vo);
 	}
 
+	@Override
+	public SimpleBoardVO getBoard(SimpleBoardVO vo) {
+		return simpleBoardDAO.getBoard(vo);
+	}
+
 }

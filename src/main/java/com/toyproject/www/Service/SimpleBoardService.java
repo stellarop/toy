@@ -9,4 +9,5 @@ import com.toyproject.www.VO.SimpleBoardVO;
 @Service
 public interface SimpleBoardService {
 	public List<SimpleBoardVO> boardList(SimpleBoardVO vo);
+	public SimpleBoardVO getBoard(SimpleBoardVO vo);
 }

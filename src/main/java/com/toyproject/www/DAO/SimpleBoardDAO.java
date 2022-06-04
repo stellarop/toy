@@ -17,4 +17,8 @@ public class SimpleBoardDAO {
 	public List<SimpleBoardVO> boardList(SimpleBoardVO vo) {
 		return sqlsessiontemplate.selectList("boardDAO.boardList", vo);
 	}
+	
+	public SimpleBoardVO getBoard(SimpleBoardVO vo) {
+		return sqlsessiontemplate.selectOne("boardDAO.getBoard", vo);
+	}
 }

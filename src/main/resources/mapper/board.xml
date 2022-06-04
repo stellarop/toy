@@ -17,7 +17,9 @@
 </select>
  
   
- 
+<select id="getBoard" resultType="board" parameterType="board">
+	SELECT * FROM SIMPLEBOARD WHERE BOARD_SEQ=#{board_seq}
+</select>
  
  
  
