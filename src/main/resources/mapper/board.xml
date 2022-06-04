@@ -21,7 +21,9 @@
 	SELECT * FROM SIMPLEBOARD WHERE BOARD_SEQ=#{board_seq}
 </select>
  
- 
+<delete id="deleteBoard">
+	DELETE FROM SIMPLEBOARD WHERE BOARD_SEQ=#{board_seq}
+</delete>
  
  
  

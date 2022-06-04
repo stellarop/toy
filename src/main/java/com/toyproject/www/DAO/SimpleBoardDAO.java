@@ -21,4 +21,8 @@ public class SimpleBoardDAO {
 	public SimpleBoardVO getBoard(SimpleBoardVO vo) {
 		return sqlsessiontemplate.selectOne("boardDAO.getBoard", vo);
 	}
+	
+	public void deleteBoard(SimpleBoardVO vo) {
+		sqlsessiontemplate.delete("boadDAO.deleteBoard", vo);
+	}
 }

@@ -25,4 +25,9 @@ public class SimpleBoardImpl implements SimpleBoardService{
 		return simpleBoardDAO.getBoard(vo);
 	}
 
+	@Override
+	public void deleteBoard(SimpleBoardVO vo) {
+		simpleBoardDAO.deleteBoard(vo);
+	}
+
 }
