@@ -16,6 +16,7 @@ var start = {
 	},
 	boardTable : function(){
 		$('#boardTable').DataTable({
+			order : [ [1, "desc"] ],
 			ajax : {
 				url : 'boardList.do',
 				type : 'post',
