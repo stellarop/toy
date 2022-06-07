@@ -22,7 +22,7 @@ public class SimpleBoardDAO {
 		return sqlsessiontemplate.selectOne("boardDAO.getBoard", vo);
 	}
 	
-	public void deleteBoard(SimpleBoardVO vo) {
-		sqlsessiontemplate.delete("boadDAO.deleteBoard", vo);
+	public void deleteBoard(int board_seq) {
+		sqlsessiontemplate.delete("boardDAO.deleteBoard", board_seq);
 	}
 }
