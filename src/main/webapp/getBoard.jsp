@@ -18,24 +18,26 @@ $(function() {
 		location.href = "board.jsp";
 	})
 		
-	$('deleteBtn').click(function() {
-		
+	$('#deleteBtn').click(function() {
 		if(confirm('정말 삭제 하시겠습니까?')) {
+			
 			$.ajax({
 				url : 'deleteBoard.do',
-				type : 'delete',
+				type : 'post',
+				dataType : 'json',
 				data : {'board_seq' : board_seq},
 				success : function(data){
-					if(data == true){
+					if(data == false){
 						alert('게시글 삭제에 실패하였습니다.\n 관리자에게 문의 해주세요.');
-					}else{
+						location.href = "getBoard.do?board_seq=" + board_seq; 
+					}else if(data == true){ 
 						alert('게시글이 삭제되었습니다.');
-					}
+						location.href = "board.jsp"; 
+					} 
 				}
-				
 			})
-		}
 			
+		}	
 	})
 		
 })
@@ -61,8 +63,8 @@ $(function() {
 	</div>
 	<div class="form-group col-md-3">
 	<br>
-		<button id="updateBtn" class="btn btn-primary">수정</button>
-		<button id="deleteBtn" class="btn btn-primary">삭제</button>
+		<button type="button" id="updateBtn" class="btn btn-primary">수정</button>
+		<button type="button" id="deleteBtn" class="btn btn-primary">삭제</button>
 	</div>
 	<div class="form-group col-md-9">
 		<label for="">게시글 제목</label>
