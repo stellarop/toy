@@ -10,5 +10,5 @@ import com.toyproject.www.VO.SimpleBoardVO;
 public interface SimpleBoardService {
 	public List<SimpleBoardVO> boardList(SimpleBoardVO vo);
 	public SimpleBoardVO getBoard(SimpleBoardVO vo);
-	public void deleteBoard(SimpleBoardVO vo);
+	public void deleteBoard(int board_seq);
 }

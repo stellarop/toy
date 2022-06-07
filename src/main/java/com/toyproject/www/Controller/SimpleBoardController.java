@@ -32,8 +32,6 @@ public class SimpleBoardController {
 		} catch (Exception e) {
 			logger.error("boardList 오류[" + e.getMessage() + "]");
 		}
-		
-		
 		return map;
 	}
 	
@@ -46,21 +44,23 @@ public class SimpleBoardController {
 		} catch (Exception e) {
 			logger.error("getBoard 오류[" + e.getMessage() + "]");
 		}
-		
 		return "getBoard.jsp";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value = "/deleteBoard.do")
 	public boolean deleteBoard(int board_seq) {
 		logger.info("board_seq : " + board_seq);
+	
 		try {
 			simpleboardservice.deleteBoard(board_seq);
-			logger.info("게시글 삭제 완료");
+			logger.info("[deleteBoard 실행]");
 			return true;
 		} catch (Exception e) {
-			logger.error("게시글 삭제 실패 [" + e.getMessage() + "]");
+			logger.error("deleteBoard 오류 [" + e.getMessage() + "]");
 			return false;
 		}
+		
 	}
 	
 	
