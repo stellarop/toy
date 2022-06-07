@@ -50,8 +50,6 @@ public class SimpleBoardController {
 	@ResponseBody
 	@RequestMapping(value = "/deleteBoard.do")
 	public boolean deleteBoard(int board_seq) {
-		logger.info("board_seq : " + board_seq);
-	
 		try {
 			simpleboardservice.deleteBoard(board_seq);
 			logger.info("[deleteBoard ½ÇÇà]");
