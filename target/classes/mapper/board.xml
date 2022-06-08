@@ -21,6 +21,14 @@
 	SELECT * FROM SIMPLEBOARD WHERE BOARD_SEQ=#{board_seq}
 </select>
  
+<insert id="insertBoard">
+	INSERT INTO SIMPLEBOARD(BOARD_TYPE, TITLE, WRITER, CONTENT) VALUES(#{board_type}, #{title}, #{writer}, #{content})
+</insert>
+ 
+<update id="updateBoard">
+ 	UPDATE SIMPLEBOARD SET BOARD_TYPE=#{board_type}, TITLE=#{title}, WRITER=#{writer}, CONTENT=#{content}
+</update>
+ 
 <delete id="deleteBoard">
 	DELETE FROM SIMPLEBOARD WHERE BOARD_SEQ=#{board_seq}
 </delete>

@@ -58,14 +58,33 @@ public class SimpleBoardController {
 			logger.error("deleteBoard 오류 [" + e.getMessage() + "]");
 			return false;
 		}
-		
 	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/insertBoard.do")
+	public boolean insertBoard(SimpleBoardVO vo) {
+		try {
+			simpleboardservice.insertBoard(vo);
+			logger.info("[insertBoard 실행]");
+			return true;
+		} catch (Exception e) {
+			logger.error("insertBoard 오류[" + e.getMessage() + "]");
+			return false;
+		}
+	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/updateBoard.do")
+	public boolean updateBoard(SimpleBoardVO vo) {
+		try {
+			simpleboardservice.updateBoard(vo);
+			logger.info("[updateBoard 실행]");
+			return true;
+		} catch (Exception e) {
+			logger.error("updateBoard 오류[" + e.getMessage() + "]");
+			return false;
+		}
+	}
 	
-	
-	
-	
-	
-	
+
 }

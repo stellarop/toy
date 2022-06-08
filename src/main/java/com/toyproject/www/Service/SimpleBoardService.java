@@ -11,4 +11,6 @@ public interface SimpleBoardService {
 	public List<SimpleBoardVO> boardList(SimpleBoardVO vo);
 	public SimpleBoardVO getBoard(SimpleBoardVO vo);
 	public void deleteBoard(int board_seq);
+	public void insertBoard(SimpleBoardVO vo);
+	public void updateBoard(SimpleBoardVO vo);
 }

@@ -25,4 +25,12 @@ public class SimpleBoardDAO {
 	public void deleteBoard(int board_seq) {
 		sqlsessiontemplate.delete("boardDAO.deleteBoard", board_seq);
 	}
+	
+	public void insertBoard(SimpleBoardVO vo) {
+		sqlsessiontemplate.insert("boardDAO.insertBoard", vo);
+	}
+	
+	public void updateBoard(SimpleBoardVO vo) {
+		sqlsessiontemplate.update("boardDAO.updateBoard", vo);
+	}
 }
