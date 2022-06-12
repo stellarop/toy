@@ -26,7 +26,7 @@
 </insert>
  
 <update id="updateBoard">
- 	UPDATE SIMPLEBOARD SET BOARD_TYPE=#{board_type}, TITLE=#{title}, WRITER=#{writer}, CONTENT=#{content}
+ 	UPDATE SIMPLEBOARD SET BOARD_TYPE=#{board_type}, TITLE=#{title}, CONTENT=#{content} WHERE BOARD_SEQ=#{board_seq}
 </update>
  
 <delete id="deleteBoard">
