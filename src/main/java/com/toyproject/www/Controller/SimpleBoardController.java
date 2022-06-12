@@ -85,10 +85,10 @@ public class SimpleBoardController {
 			return "updateBoard.jsp";
 		} catch (Exception e) {
 			logger.error("updateBoardView ¿À·ù[" + e.getMessage() + "]");
-			return "re.jsp";
+			return "redirect:getBoard.do";
 		}
 	}
-	
+	 
 	@ResponseBody
 	@RequestMapping(value = "/updateBoard.do")
 	public boolean updateBoard(SimpleBoardVO vo) {
