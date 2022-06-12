@@ -3,6 +3,8 @@ package com.toyproject.www.Controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +19,7 @@ import com.toyproject.www.VO.SimpleBoardVO;
 
 @Controller
 public class SimpleBoardController {
-	private static final Logger logger = Logger.getLogger(Maincontroller.class);
+	private static final Logger logger = Logger.getLogger(SimpleBoardController.class);
 	@Autowired
 	private SimpleBoardService simpleboardservice;
 	
@@ -62,14 +64,28 @@ public class SimpleBoardController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/insertBoard.do")
-	public boolean insertBoard(SimpleBoardVO vo) {
+	public boolean insertBoard(SimpleBoardVO vo, HttpSession session) {
 		try {
+			String userId = (String) session.getAttribute("userId");
+			vo.setWriter(userId);
 			simpleboardservice.insertBoard(vo);
 			logger.info("[insertBoard 실행]");
 			return true;
 		} catch (Exception e) {
 			logger.error("insertBoard 오류[" + e.getMessage() + "]");
 			return false;
+		}
+	}
+	
+	@RequestMapping(value = "/updateBoardView.do")
+	public String updateBoardView(SimpleBoardVO vo, Model model) {
+		try {
+			model.addAttribute("getBoard", simpleboardservice.getBoard(vo));
+			logger.info("[updateBoardView 실행]");
+			return "updateBoard.jsp";
+		} catch (Exception e) {
+			logger.error("updateBoardView 오류[" + e.getMessage() + "]");
+			return "re.jsp";
 		}
 	}
 	
