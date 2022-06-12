@@ -17,10 +17,13 @@ $(function() {
 	$('#boardBtn').click(function() {
 		location.href = "board.jsp";
 	})
-		
+	
+	$('#updateBtn').click(function() {
+		location.href = "updateBoardView.do?board_seq=" + board_seq;
+	})
+	
 	$('#deleteBtn').click(function() {
 		if(confirm('정말 삭제 하시겠습니까?')) {
-			
 			$.ajax({
 				url : 'deleteBoard.do',
 				type : 'post',
@@ -28,7 +31,7 @@ $(function() {
 				data : {'board_seq' : board_seq},
 				success : function(data){
 					if(data == false){
-						alert('게시글 삭제에 실패하였습니다.\n 관리자에게 문의 해주세요.');
+						alert('게시글 삭제에 실패하였습니다.\n관리자에게 문의 해주세요.');
 						location.href = "getBoard.do?board_seq=" + board_seq; 
 					}else if(data == true){ 
 						alert('게시글이 삭제되었습니다.');
