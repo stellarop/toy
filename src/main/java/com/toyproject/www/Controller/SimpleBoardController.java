@@ -34,9 +34,8 @@ public class SimpleBoardController {
 		} catch (Exception e) {
 			logger.error("boardList 오류[" + e.getMessage() + "]");
 		}
-		return map;
+		return map; 
 	}
-	
 	
 	@RequestMapping(value = "/getBoard.do")
 	public String getBoard(SimpleBoardVO vo, Model model) {
@@ -60,7 +59,7 @@ public class SimpleBoardController {
 			logger.error("deleteBoard 오류 [" + e.getMessage() + "]");
 			return false;
 		}
-	}
+	}   
 	
 	@ResponseBody
 	@RequestMapping(value = "/insertBoard.do")
