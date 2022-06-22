@@ -21,7 +21,7 @@ var start = {
 	},
 	insertBtn : function() {
 		$('#insertBtn').click(function() {
-			location.href = "insertboard.jsp"; 
+			location.href = "insertBoard.jsp"; 
 		})
 	},
 	boardTable : function(){
