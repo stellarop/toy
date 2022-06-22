@@ -28,11 +28,11 @@ public class SimpleBoardController {
 	public Map<String, Object> boardList(SimpleBoardVO vo) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		try {
-			//dataTable·Î ³Ñ°ÜÁÖ´Â µ¥ÀÌÅÍ ÀÌ¸§Àº ¹«Á¶°Ç data·Î ³Ñ°ÜÁÖ¾î¾ß ÇÑ´Ù.
+			//dataTableë¡œ ë„˜ê²¨ì£¼ëŠ” ë°ì´í„° ì´ë¦„ì€ ë¬´ì¡°ê±´ dataë¡œ ë„˜ê²¨ì£¼ì–´ì•¼ í•œë‹¤.
 			map.put("data", simpleboardservice.boardList(vo));
-			logger.info("[boardList ½ÇÇà]");
+			logger.info("[boardList ì‹¤í–‰]");
 		} catch (Exception e) {
-			logger.error("boardList ¿À·ù[" + e.getMessage() + "]");
+			logger.error("boardList ì˜¤ë¥˜[" + e.getMessage() + "]");
 		}
 		return map; 
 	}
@@ -41,9 +41,9 @@ public class SimpleBoardController {
 	public String getBoard(SimpleBoardVO vo, Model model) {
 		try {
 			model.addAttribute("getBoard", simpleboardservice.getBoard(vo));
-			logger.info("[getBoard ½ÇÇà]");
+			logger.info("[getBoard ì‹¤í–‰]");
 		} catch (Exception e) {
-			logger.error("getBoard ¿À·ù[" + e.getMessage() + "]");
+			logger.error("getBoard ì˜¤ë¥˜[" + e.getMessage() + "]");
 		}
 		return "getBoard.jsp";
 	}
@@ -53,10 +53,10 @@ public class SimpleBoardController {
 	public boolean deleteBoard(int board_seq) {
 		try {
 			simpleboardservice.deleteBoard(board_seq);
-			logger.info("[deleteBoard ½ÇÇà]");
+			logger.info("[deleteBoard ì‹¤í–‰]");
 			return true;
 		} catch (Exception e) {
-			logger.error("deleteBoard ¿À·ù [" + e.getMessage() + "]");
+			logger.error("deleteBoard ì˜¤ë¥˜ [" + e.getMessage() + "]");
 			return false;
 		}
 	}   
@@ -68,10 +68,10 @@ public class SimpleBoardController {
 			String userId = (String) session.getAttribute("userId");
 			vo.setWriter(userId);
 			simpleboardservice.insertBoard(vo);
-			logger.info("[insertBoard ½ÇÇà]");
+			logger.info("[insertBoard ì‹¤í–‰]");
 			return true;
 		} catch (Exception e) {
-			logger.error("insertBoard ¿À·ù[" + e.getMessage() + "]");
+			logger.error("insertBoard ì˜¤ë¥˜[" + e.getMessage() + "]");
 			return false;
 		}
 	}
@@ -80,10 +80,10 @@ public class SimpleBoardController {
 	public String updateBoardView(SimpleBoardVO vo, Model model) {
 		try {
 			model.addAttribute("getBoard", simpleboardservice.getBoard(vo));
-			logger.info("[updateBoardView ½ÇÇà]");
+			logger.info("[updateBoardView ì‹¤í–‰]");
 			return "updateBoard.jsp";
 		} catch (Exception e) {
-			logger.error("updateBoardView ¿À·ù[" + e.getMessage() + "]");
+			logger.error("updateBoardView ì˜¤ë¥˜[" + e.getMessage() + "]");
 			return "redirect:getBoard.do";
 		}
 	}
@@ -93,10 +93,10 @@ public class SimpleBoardController {
 	public boolean updateBoard(SimpleBoardVO vo) {
 		try {
 			simpleboardservice.updateBoard(vo);
-			logger.info("[updateBoard ½ÇÇà]");
+			logger.info("[updateBoard ì‹¤í–‰]");
 			return true;
 		} catch (Exception e) {
-			logger.error("updateBoard ¿À·ù[" + e.getMessage() + "]");
+			logger.error("updateBoard ì˜¤ë¥˜[" + e.getMessage() + "]");
 			return false;
 		}
 	}
