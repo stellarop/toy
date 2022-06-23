@@ -36,10 +36,10 @@ $(function() {
 	<h1>메인 페이지</h1>
 <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link active" href="#">상담 게시판</a>
+    <a class="nav-link active" href="board.jsp">상담 게시판</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">판매처 등록</a>
+    <a class="nav-link" href="insertVendor.jsp">판매처 등록</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">상품 등록</a>
