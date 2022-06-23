@@ -3,27 +3,27 @@ package com.toyproject.www.VO;
 import java.sql.Date;
 
 public class ProductVO {
-	// »óÇ° ¹øÈ£
+		// ìƒí’ˆ ë²ˆí˜¸
 		private int product_seq;
-		// ÆÇ¸ÅÃ³ °íÀ¯ ¹øÈ£
+		// íŒë§¤ì²˜ ë²ˆí˜¸ 
 		private int vendor_seq;
-		// ÆÇ¸ÅÃ³ °íÀ¯ ÄÚµå
+		// íŒë§¤ì²˜ ê³ ìœ  ì½”ë“œ
 		private String vendor_code;
-		// »óÇ° °íÀ¯ ÄÚµå 
+		// ìƒí’ˆ ì½”ë“œ 
 		private String product_code;
-		// ÆÇ¸ÅÃ³ »óÈ£
+		// íŒë§¤ì²˜ ì´ë¦„
 		private String vendor_name;
-		// »óÇ° Å¸ÀÔ
+		// ìƒí’ˆ íƒ€ì…
 		private String product_type;
-		// »óÇ° °¡°İ
+		// ìƒí’ˆ ê°€ê²©
 		private int product_price;
-		// »óÇ° ¹«°Ô
+		// ìƒí’ˆ ë¬´ê²Œ
 		private int product_weight;
-		// »óÇ° °¡°ø ¿©ºÎ
+		// ìƒí’ˆ íŒ¨í‚¤ì§• 
 		private String product_process;
-		// »óÇ° ¼ö·®
+		// ìƒí’ˆ ê°œìˆ˜
 		private int product_quantity;
-		// »óÇ° µî·Ï ³¯Â¥
+		// ìƒí’ˆ ë“±ë¡ ë‚ ì§œ
 		private Date regData;
 		public int getProduct_seq() {
 			return product_seq;

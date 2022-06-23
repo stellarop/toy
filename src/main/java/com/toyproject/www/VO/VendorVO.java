@@ -3,17 +3,17 @@ package com.toyproject.www.VO;
 import java.sql.Date;
 
 public class VendorVO {
-	// ÆÇ¸ÅÃ³ °íÀ¯ ¹øÈ£
+		// íŒë§¤ì²˜ ë²ˆí˜¸
 		private int vendor_seq;
-		// ÆÇ¸ÅÃ³ °íÀ¯ ÄÚµå
+		// íŒë§¤ì²˜ ê³ ìœ  ì½”ë“œ
 		private String vendor_code;
-		// ÆÇ¸ÅÃ³ »óÈ£
+		// íŒë§¤ì²˜ ìƒí˜¸
 		private String vendor_name;
-		// ÆÇ¸Å ´ã´çÀÚ ¹øÈ£
+		// íŒë§¤ì²˜ ë‹´ë‹¹ì ë²ˆí˜¸
 		private String vendor_number;
-		// ÆÇ¸ÅÃ³ »óÇ° Å¸ÀÔ
+		// íŒë§¤ ìƒí’ˆ íƒ€ì…
 		private String vendor_type;
-		// µî·Ï³¯Â¥
+		// íŒë§¤ì²˜ ë“±ë¡ ë‚ ì§œ
 		private Date regData;
 		public int getVendor_seq() {
 			return vendor_seq;
