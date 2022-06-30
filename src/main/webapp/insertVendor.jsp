@@ -10,7 +10,69 @@
 <script src="jquery/jquery-3.6.0.min.js"></script>
 <script>
 $(function() {
+	$('#insertVendorBtn').click(function() {
+		
+		var vendor_name = $('#vendor_name').val();
+		var vendor_number = $('#vendor_number').val();
+		var vendor_type = $('#vendor_type').val();
+		var vendor_address = $('#vendor_address').val();
+		var vendor_username = $('#vendor_username').val();
 	
+		if(vendor_name == ''){
+			alert('상호명을 입력해주세요.');
+			$('#vendor_name').focus();
+			return false;v
+		}
+		if(vendor_number == ''){
+			alert('담당자 번호를 입력해주세요.');
+			$('#vendor_number').focus();
+			return false;
+		}
+		if(vendor_type == '판매하시는 상품을 선택해주세요'){
+			alert('상품 타입을 선택해주세요.');
+			$('#vendor_type').focus();
+			return false;
+		}
+		if(vendor_address == ''){
+			alert('담당자 주소를 입력해주세요.');
+			$('#vendor_address').focus();
+			return false;
+		}
+		if(vendor_username == ''){
+			alert('담당자 성함을 입력해주세요.');
+			$('#vendor_username').focus();
+			return false;
+		}
+		
+		var data = { 
+			'vendor_name' : vendor_name,
+			'vendor_number' : vendor_number,
+			'vendor_type' : vendor_type,
+			'vendor_address' : vendor_address,
+			'vendor_username' : vendor_username
+		}
+		console.log(data);
+		
+		$.ajax({
+			url : 'insertVendor.do',
+			type : 'post',
+			dataType : 'json',
+			data : data,
+			success : function(data) {
+				if(data == true){
+					alert('판매처 등록이 성공적으로 등록 되었습니다.');
+					location.href = "main.do"
+				}else if(data == false){
+					alert('판매처 등록에 실패하였습니다.\n관리자에게 문의 해주세요.');
+					location.href = "main.do"
+				}
+			},error : function(data){
+				alert('알 수없는 오류입니다.\n 관리자에게 문의 해주세요.');
+				location.href = "main.do"
+			}
+		})
+		
+	})
 })
 </script>
 <meta charset="UTF-8">
@@ -24,18 +86,18 @@ $(function() {
 	
 		<div class="form-group col-md-5">
 			<label for="">판매처 상호명</label>
-			<input type="text" class="form-control"/>
+			<input type="text" class="form-control" name="vendor_name" id="vendor_name"/>
 		</div>
 		
 		<div class="form-group col-md-4">
 			<label for="">담당자 번호</label>
-			<input type="text" class="form-control"/>
+			<input type="text" class="form-control" name="vendor_number" id="vendor_number"/>
 		</div>
 		
 		<div class="form-group col-md-4">
 			<label for="">상품 타입</label>
-				<select name="sex" id="sex" class="form-control">
-					<option selected>판매하시는 상품을 선택 해주세요.</option>
+				<select class="form-control" name="vendor_type" id="vendor_type">
+					<option selected>판매하시는 상품을 선택해주세요.</option>
 					<option>의류</option>
 					<option>주류</option>
 					<option>식품</option>
@@ -47,12 +109,12 @@ $(function() {
 		
 		<div class="form-group col-md-5">
 			<label for="">판매처 담당자 주소</label>
-			<input type="text" class="form-control"/>
+			<input type="text" class="form-control" name="vendor_address" id="vendor_address"/>
 		</div>
 		
 		<div class="form-group col-md-4">
 			<label for="">판매처 담당자 성함</label>
-			<input type="text" class="form-control"/>
+			<input type="text" class="form-control" name="vendor_username" id="vendor_username"/>
 		</div>
 		
 		
