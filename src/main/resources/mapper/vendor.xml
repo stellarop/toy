@@ -6,8 +6,12 @@
 
 
 <insert id="insertVendor">
-	INSERT INTO VENDOR(vendor_name,vendor_number,vendor_type)
-	VALUES(#{vendor_name}, #{vendor_number} ,#{vendor_type})
+	INSERT INTO VENDOR(vendor_name,vendor_number,vendor_type,vendor_code,
+	vendor_address, vendor_username)
+	VALUES(#{vendor_name}, #{vendor_number},#{vendor_type}, #{vendor_code},
+	 #{vendor_address}, #{vendor_username})
 </insert>
+
+
 
 </mapper>
