@@ -1,5 +1,9 @@
 package com.toyproject.www.Controller;
 
+
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
@@ -8,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.toyproject.www.VO.UserVO;
 
@@ -24,10 +29,12 @@ public class Maincontroller {
 		String userId = (String) session.getAttribute("userId");
 //		||StringUtils.isEmpty(userId)
 		if (userId == null) {
-			logger.info("[ºñÁ¤»óÀûÀÎ Á¢±Ù] : ·Î±×ÀÎ ÈÄ ÀÌ¿ë ¹Ù¶ø´Ï´Ù.");
+			logger.info("[ë¹„ì •ìƒì ì¸ ì ‘ê·¼] : ë¡œê·¸ì¸ í›„ ì´ìš© ë°”ëë‹ˆë‹¤.");
 			return "redirect:login.jsp";
 		}
 		
 		return "main.jsp";
 	}
+	
+	
 }

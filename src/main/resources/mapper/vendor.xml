@@ -4,14 +4,35 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="vendorDAO">
 
+<resultMap id="vendorResult" type="vendor">  
+  	<id property="vendor_seq" column="VENDOR_SEQ"/>
+  	<result property="vendor_name" column="VENDOR_NAME"/>
+  	<result property="vendor_type" column="VENDOR_TYPE"/>
+  	<result property="vendor_username" column="VENDOR_USERNAME"/>
+  </resultMap>
 
-<insert id="insertVendor">
+<select id="vendorList" resultMap="vendorResult">
+	SELECT * FROM VENDOR ORDER BY VENDOR_SEQ DESC;
+</select>
+
+<select id="selectVendor" resultType="vendor" parameterType="vendor">
+	SELECT * FROM VENDOR WHERE VENDOR_SEQ=#{vendor_seq};
+</select>
+
+<insert id="insertVendor"> 
 	INSERT INTO VENDOR(vendor_name,vendor_number,vendor_type,vendor_code,
 	vendor_address, vendor_username)
 	VALUES(#{vendor_name}, #{vendor_number},#{vendor_type}, #{vendor_code},
-	 #{vendor_address}, #{vendor_username})
+	 #{vendor_address}, #{vendor_username});
 </insert>
 
+<delete id="deleteVendor">
+	DELETE FROM VENDOR WHERE VENDOR_SEQ=#{vendor_seq};
+</delete>
+
+<select id="selectVendorCode" resultType="int">
+	SELECT COUNT(*) FROM VENDOR WHERE VENDOR_CODE=#{vendor_code};
+</select>
 
 
 </mapper>

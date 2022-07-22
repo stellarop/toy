@@ -18,11 +18,13 @@ public class ProductVO {
 		// 상품 가격
 		private int product_price;
 		// 상품 무게
-		private int product_weight;
+		private String product_weight;
 		// 상품 패키징 
 		private String product_process;
 		// 상품 개수
 		private int product_quantity;
+		// 상품명
+		private String product_name;
 		// 상품 등록 날짜
 		private Date regData;
 		public int getProduct_seq() {
@@ -67,10 +69,10 @@ public class ProductVO {
 		public void setProduct_price(int product_price) {
 			this.product_price = product_price;
 		}
-		public int getProduct_weight() {
+		public String getProduct_weight() {
 			return product_weight;
 		}
-		public void setProduct_weight(int product_weight) {
+		public void setProduct_weight(String product_weight) {
 			this.product_weight = product_weight;
 		}
 		public String getProduct_process() {
@@ -85,12 +87,19 @@ public class ProductVO {
 		public void setProduct_quantity(int product_quantity) {
 			this.product_quantity = product_quantity;
 		}
+		public String getProduct_name() {
+			return product_name;
+		}
+		public void setProduct_name(String product_name) {
+			this.product_name = product_name;
+		}
 		public Date getRegData() {
 			return regData;
 		}
 		public void setRegData(Date regData) {
 			this.regData = regData;
 		}
+		
 		
 	
 	

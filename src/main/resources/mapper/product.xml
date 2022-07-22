@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="productDAO">
+
+ <resultMap id="productResult" type="product">  
+  	<id property="product_seq" column="PRODUCT_SEQ"/>
+  	<result property="product_code" column="PRODUCT_CODE"/>
+  	<result property="vendor_name" column="VENDOR_NAME"/>
+  	<result property="product_name" column="PRODUCT_NAME"/>
+  	<result property="product_type" column="PRODUCT_TYPE"/>
+  	<result property="product_price" column="PRODUCT_PRICE"/>
+  	<result property="product_weight" column="PRODUCT_WEIGHT"/>
+  	<result property="product_process" column="PRODUCT_PROCESS"/>
+  	<result property="product_quantity" column="PRODUCT_QUANTITY"/>
+  	<result property="regData" column="REGDATE"/>
+  </resultMap>
+
+<select id="vendorProductList" resultMap="productResult">
+	SELECT * FROM PRODUCT WHERE VENDOR_CODE=#{vendor_code} ORDER BY PRODUCT_SEQ DESC;
+</select> 
+ 
+</mapper>

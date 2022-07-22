@@ -7,6 +7,8 @@
 		<typeAlias alias="user" type="com.toyproject.www.VO.UserVO"/>
 		<typeAlias alias="board" type="com.toyproject.www.VO.SimpleBoardVO"/>
 		<typeAlias alias="vendor" type="com.toyproject.www.VO.VendorVO"/>
+		<typeAlias alias="product" type="com.toyproject.www.VO.ProductVO"/>
+		
 	</typeAliases>
 	
 	<!-- SQL.XML 매퍼등록 -->
@@ -14,6 +16,6 @@
 		<mapper resource="mapper/user.xml"/>
 		<mapper resource="mapper/board.xml"/>
 		<mapper resource="mapper/vendor.xml"/>
-		
+		<mapper resource="mapper/product.xml"/>
 	</mappers>
 </configuration>

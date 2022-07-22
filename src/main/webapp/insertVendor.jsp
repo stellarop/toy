@@ -64,7 +64,7 @@ $(function() {
 					location.href = "main.do"
 				}else if(data == false){
 					alert('판매처 등록에 실패하였습니다.\n관리자에게 문의 해주세요.');
-					location.href = "main.do"
+					location.href = "insertVendor.jsp"
 				}
 			},error : function(data){
 				alert('알 수없는 오류입니다.\n 관리자에게 문의 해주세요.');

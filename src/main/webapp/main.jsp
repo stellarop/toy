@@ -45,7 +45,10 @@ $(function() {
     <a class="nav-link" href="#">상품 등록</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled" href="#"></a>
+    <a class="nav-link" href="vendorList.jsp">판매처 리스트</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" href="#">상품 리스트</a>
   </li>
 </ul>
 </body>

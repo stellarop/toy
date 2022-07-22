@@ -13,7 +13,6 @@
 $(function() {
 	$('#insertBtn').click(function() {
 		
-		
 		var board_type = $('#board_type').val();
 		var title = $('#title').val();
 		var content = $('#content').val();

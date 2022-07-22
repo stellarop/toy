@@ -267,7 +267,7 @@ function idCheck() {
 					class="form-control" id="address2" name="address2"
 					placeholder="상세 주소를 입력해주세요.">
 			</div>
-
+	
 		</form>
 		<button type="button" id="SingUpBtn" class="btn btn-primary">회원가입</button>
 </body>

@@ -57,10 +57,6 @@ $(function(){
 			} 
 		})
 	})
-
-	
-	
-    
     
 });
 
@@ -135,6 +131,8 @@ function kakaologin() {
     <div class="row">
         <div class="col-md-12">
            	<a href="SignUp.jsp">회원가입하기 </a>
+           	<a href="test.jsp">test</a>
+           	<a href="modenWeb.jsp">모던웹 jsp</a>
         </div>
     </div>
 </div>
