@@ -10,6 +10,8 @@
 	crossorigin="anonymous">
 <script src="jquery/jquery-3.6.0.min.js"></script>
 <script src="dataTable/datatables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css" />
 <script>
 
 $(function() {
@@ -125,6 +127,7 @@ function selectVendor() {
 					
 					selectVendor += '<div class="form-group col-md-3">';
 					selectVendor += '<br>';
+					// 스크립트에서 함수에 문자열 매개변수를 넘길 시 \', '\ 를 붙혀줘야 함
 					selectVendor += '<button type="button" class="btn btn-success" onclick="mapSearch(\'' + data.selectVendor.vendor_address + '\');">View Map</button>';
 					selectVendor += '</div>';
 					// button 영역	
@@ -132,7 +135,7 @@ function selectVendor() {
 					selectVendor += '<button type="button" id="updateVendor" class="btn btn-primary">수정</button>&nbsp;&nbsp;&nbsp;';
 					selectVendor += '<button type="button" id="deleteVendor" class="btn btn-danger" onclick="deleteVendor(' + data.selectVendor.vendor_seq + ');">삭제</button>&nbsp;&nbsp;&nbsp';
 
-					// 스크립트에서 함수에 문자열 매개변수를 넘길 시 \', '\ 를 붙혀줘야 함
+					
 					
 					selectVendor += '</div>'; 
 					
@@ -154,7 +157,30 @@ function productList(vc) {
 		location.href = "vendorList.jsp";
 	}else{
 		$('#vendorProductList').DataTable({
+			paging : true,
+			searching : true,
 			order : [ [1, "desc"] ],
+			language: {
+	            emptyTable:     "표에서 사용할 수있는 데이터가 없습니다.",
+	            info : "_START_ - _END_ (총 _TOTAL_ 건)",
+	            infoEmpty :      "0 개 항목 중 0 ~ 0 개 표시",
+	            lengthMenu :     "_MENU_",
+	            loadingRecords : "로드 중",
+	            processing :     "처리 중",
+	            search :         "검색 : ",
+	            lengthMenu : "_MENU_ 개씩 보기",
+	            zeroRecords :    "일치하는 데이터가 없습니다.",
+	            paginate : {
+	                first :      "처음",
+	                last :       "마지막",
+	                next :       "다음",
+	                previous :   "이전"
+	            },
+	            aria: {
+	                sortAscending :  ": 오름차순으로 정렬",
+	                sortDescending : ": 내림차순으로 정렬"
+	            }
+	        },
 			ajax : {
 				url : 'vendorProductList.do',
 				type : 'get',
@@ -198,7 +224,16 @@ function productList(vc) {
 <body>
 	<div id="selectVendor">
 	</div>
-	<table id="vendorProductList" class="center">
+	<br>
+	
+	<div class="container" role="main">
+	<div class="form-row">
+	<table id="vendorProductList" style="width: 1100px; text-align: center" class="table table-hover">
+		
 	</table>
+	</div>
+	</div>
+	
+	
 </body>
 </html>
