@@ -7,6 +7,7 @@
  <resultMap id="productResult" type="product">  
   	<id property="product_seq" column="PRODUCT_SEQ"/>
   	<result property="product_code" column="PRODUCT_CODE"/>
+  	<result property="vendor_code" column="VENDOR_CODE"/>
   	<result property="vendor_name" column="VENDOR_NAME"/>
   	<result property="product_name" column="PRODUCT_NAME"/>
   	<result property="product_type" column="PRODUCT_TYPE"/>

@@ -14,8 +14,7 @@
 <!-- jquery -->
 <script src="jquery/jquery-3.6.0.min.js"></script>
 <!-- 카카오 주소 api -->
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 $(function() {
 	$('#SingUpBtn').click(function() {
