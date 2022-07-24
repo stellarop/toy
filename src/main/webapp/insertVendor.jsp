@@ -8,8 +8,18 @@
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
 <script src="jquery/jquery-3.6.0.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 $(function() {
+	
+	$('#vendor_address').click(function() {
+		new daum.Postcode({
+	        oncomplete: function(data) {
+	        	$('#vendor_address').val(data.address);
+	        }
+	    }).open();
+	})
+	
 	$('#insertVendorBtn').click(function() {
 		
 		var vendor_name = $('#vendor_name').val();
