@@ -10,12 +10,41 @@
 	crossorigin="anonymous">
 <script src="jquery/jquery-3.6.0.min.js"></script>
 <script src="dataTable/datatables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css" />
 <script>
 $(function() {
 	
+	$('#backBtn').click(function() {
+		location.href = "main.jsp"; 
+	})
 
 	$('#vendorList').DataTable({
-		order : [ [1, "desc"] ],
+		paging : true,
+		searching : true,
+		order : [1, "desc"],
+		language: {
+            emptyTable : "판매처가 존재하지 않습니다..",
+            info : "_START_ - _END_ (총 _TOTAL_ 건)",
+            infoEmpty :      "0 개 항목 중 0 ~ 0 개 표시",
+            infoFiltered : "(전체 _MAX_ 건 중 검색결과)",
+            lengthMenu :     "_MENU_",
+            loadingRecords : "로드 중",
+            processing : "처리 중",
+            search : "검색 : ",
+            lengthMenu : "_MENU_ 개씩 보기",
+            zeroRecords : "일치하는 데이터가 없습니다.",
+            paginate : {
+                first : "처음",
+                last : "마지막",
+                next : "다음",
+                previous : "이전"
+            },
+            aria: {
+                sortAscending :  ": 오름차순으로 정렬",
+                sortDescending : ": 내림차순으로 정렬"
+            }
+        },
 		ajax : {
 			url : 'vendorList.do',
 			type : 'post',
@@ -39,14 +68,7 @@ $(function() {
             ,{ targets: 3  ,className: "dt-head-center"}
       ]
 	});
-	
-	
-	
-	$('#test').click(function() {
-		alert(1)
-	})
-	
-	
+
 	
 });
 function selectVendor(seq) {
@@ -68,8 +90,15 @@ function selectVendor(seq) {
 <title>판매처 리스트</title>
 </head>
 <body>
-<button id="test" type="button">test</button>
-	<table id="vendorList">
+
+	<div class="container" role="main">
+	<div class="form-row">
+		<h1>판매처 리스트</h1>
+		<br><br><br><br>
+	<table id="vendorList" style="width: 1100px; text-align: center" class="table table-hover">
 	</table>
+	<button type="button" id="backBtn" class="btn btn-primary">이전</button>
+	</div>
+	</div>
 </body>
 </html>

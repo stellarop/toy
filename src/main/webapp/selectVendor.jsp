@@ -16,8 +16,11 @@
 
 $(function() {
 	selectVendor();
-})
-
+	
+	$('#backBtn').click(function() {
+		location.href = "vendorList.jsp"; 
+	})
+});
 function mapSearch(add) {
 	
 	var address = add;
@@ -131,7 +134,8 @@ function selectVendor() {
 					selectVendor += '<button type="button" class="btn btn-success" onclick="mapSearch(\'' + data.selectVendor.vendor_address + '\');">View Map</button>';
 					selectVendor += '</div>';
 					// button 영역	
-					selectVendor += '</div>'; 
+					selectVendor += '</div>';
+					selectVendor += '<button type="button" id="backBtn" class="btn btn-primary">이전</button>&nbsp;&nbsp;&nbsp;';
 					selectVendor += '<button type="button" id="updateVendor" class="btn btn-primary">수정</button>&nbsp;&nbsp;&nbsp;';
 					selectVendor += '<button type="button" id="deleteVendor" class="btn btn-danger" onclick="deleteVendor(' + data.selectVendor.vendor_seq + ');">삭제</button>&nbsp;&nbsp;&nbsp';
 
@@ -159,22 +163,23 @@ function productList(vc) {
 		$('#vendorProductList').DataTable({
 			paging : true,
 			searching : true,
-			order : [ [1, "desc"] ],
+			order : [1, "desc"],
 			language: {
-	            emptyTable:     "표에서 사용할 수있는 데이터가 없습니다.",
+	            emptyTable : "판매처에서 등록된 상품이 존재하지 않습니다.",
 	            info : "_START_ - _END_ (총 _TOTAL_ 건)",
 	            infoEmpty :      "0 개 항목 중 0 ~ 0 개 표시",
-	            lengthMenu :     "_MENU_",
+	            infoFiltered : "(전체 _MAX_ 건 중 검색결과)",
+	            lengthMenu : "_MENU_",
 	            loadingRecords : "로드 중",
-	            processing :     "처리 중",
-	            search :         "검색 : ",
+	            processing : "처리 중",
+	            search : "검색 : ",
 	            lengthMenu : "_MENU_ 개씩 보기",
-	            zeroRecords :    "일치하는 데이터가 없습니다.",
+	            zeroRecords : "일치하는 데이터가 없습니다.",
 	            paginate : {
-	                first :      "처음",
-	                last :       "마지막",
-	                next :       "다음",
-	                previous :   "이전"
+	                first : "처음",
+	                last : "마지막",
+	                next : "다음",
+	                previous : "이전"
 	            },
 	            aria: {
 	                sortAscending :  ": 오름차순으로 정렬",
@@ -215,8 +220,8 @@ function productList(vc) {
 			
 		});
 	}
-
 }
+
 </script>
 <meta charset="UTF-8">
 <title>판매처 상세 조회</title>
