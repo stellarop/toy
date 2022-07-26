@@ -13,4 +13,5 @@ public interface VendorService {
 	public VendorVO selectVendor(VendorVO vendorvo);
 	public void deleteVendor(int vendor_seq);
 	public int selectVendorCode(String vendor_code);
+	public int selectUserId(String user_Id);
 }

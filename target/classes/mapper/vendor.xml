@@ -34,5 +34,8 @@
 	SELECT COUNT(*) FROM VENDOR WHERE VENDOR_CODE=#{vendor_code};
 </select>
 
+<select id="selectUserId" resultType="int">
+	SELECT COUNT(*) FROM VENDOR WHERE USER_ID=#{user_id}
+</select>
 
 </mapper>

@@ -40,4 +40,9 @@ public class VendorImpl implements VendorService{
 		return vendorDAO.selectVendorCode(vendor_code);
 	}
 
+	@Override
+	public int selectUserId(String user_Id) {
+		return vendorDAO.selectUserId(user_Id);
+	}
+
 }

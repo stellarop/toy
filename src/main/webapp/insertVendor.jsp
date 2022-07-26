@@ -9,6 +9,7 @@
 	crossorigin="anonymous">
 <script src="jquery/jquery-3.6.0.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<!-- alert 꾸미기 -->
 <script>
 $(function() {
 	
@@ -69,16 +70,27 @@ $(function() {
 			dataType : 'json',
 			data : data,
 			success : function(data) {
-				if(data == true){
-					alert('판매처 등록이 성공적으로 등록 되었습니다.');
-					location.href = "main.do"
-				}else if(data == false){
-					alert('판매처 등록에 실패하였습니다.\n관리자에게 문의 해주세요.');
-					location.href = "insertVendor.jsp"
+				if(confirm('판매처를 등록하시겠습니까?')){
+					if(data == 20){
+						alert('세션이 만료되었습니다.\n다시 로그인 해주세요.');
+						location.href = "login.jsp"
+					}else if(data == 0){
+						alert('판매처 등록은 계정당 한개만 가능합니다.');
+						location.href = "insertVendor.jsp"
+					}else if(data == 1){
+						alert('판매처 코드 생성이 중복되었습니다.\n다시 시도해주세요.');
+						location.href = "insertVendor.jsp"
+					}else if(data == 2){
+						alert('판매처 등록이 완료되었습니다.');
+						location.href = "main.jsp"
+					}else if(data == 3){
+						alert('판매처 등록에 실패하였습니다.\n관리자에게 문의 해주세요.');
+						location.href = "main.jsp"
+					}
 				}
 			},error : function(data){
-				alert('알 수없는 오류입니다.\n 관리자에게 문의 해주세요.');
-				location.href = "main.do"
+				alert('알 수없는 오류입니다.\n관리자에게 문의 해주세요.');
+				location.href = "main.jsp"
 			}
 		})
 		

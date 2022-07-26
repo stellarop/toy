@@ -33,4 +33,8 @@ public class VendorDAO {
 	public int selectVendorCode(String vendor_code) {
 		return sqlsessiontemplate.selectOne("vendorDAO.selectVendorCode", vendor_code);
 	}
+	
+	public int selectUserId(String user_Id) {
+		return sqlsessiontemplate.selectOne("vendorDAO.selectUserId", user_Id);
+	}
 }

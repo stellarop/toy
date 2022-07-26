@@ -19,6 +19,8 @@ public class VendorVO {
 		private String vendor_address; // user테이블에서 가져와야함
 		// 판매처 담당자 이름
 		private String vendor_username; // user테이블에서 가져와야함
+		// 회원가입 한 유저 아이디
+		private String user_id;
 		public int getVendor_seq() {
 			return vendor_seq;
 		}
@@ -67,6 +69,14 @@ public class VendorVO {
 		public void setVendor_username(String vendor_username) {
 			this.vendor_username = vendor_username;
 		}
+		public String getUserid() {
+			return user_id;
+		}
+		public void setUserid(String userid) {
+			this.user_id = userid;
+		}
+		
+		
 		
 		
 	
